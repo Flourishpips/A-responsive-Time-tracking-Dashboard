@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>Time tracker</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Felipa&family=Great+Vibes&family=Italianno&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+    </style>
+</head>
+<body class="bg-[#0d1323]">
+  <div class="w-[100%] h-500 grid grid-cols-1 gap-6 md:gap-0 mx-auto grid-rows-7  md:grid-cols-4 md:h-170 md:grid-rows-2">
+    <div class="w-[80%] mx-auto relative md:row-span-2 ">
+      <div class="w-full h-[60%] rounded-3xl bg-[#5746ea] absolute top-5 z-30 flex items-center md:grid md:h-[65%]"> 
+        <img class="md:self-center w-20 h-20 m-5 md:mt-25  rounded-full border-6 border-white md:justify-self-center" src="images/image-jeremy.png" alt="img">
+        <div class="self-center text-white font-semibold md:text-center md:mb-50 mt-5 shadow-md">
+          <p class="text-xl md:text-2xl ">report for</p>
+          <p class="text-3xl md:text-4xl  font-sans" id="name">Jeremy Robson</p>
+        </div>
+      </div>
+      <div class="w-full h-[200px] rounded-3xl bg-[#1d204b] absolute bottom-0 z-10 flex items-end md:h-[600px]">
+        <div class="md:justify-self-center flex text-white self-end text-xl gap-5 ml-5 mb-10 md:grid md:gap-6">
+          <button
+          data-period="daily"
+          class="period-btn relative text-left text-lg font-light text-[#7678b6] hover:text-white transition-colors duration-200 cursor-pointer"">
+            Daily
+            <span class="underline-bar block h-0.5 bg-white mt-1 transition-all duration-300 w-0"></span>
+          </button>
+
+          <button
+          data-period="weekly"
+          class="period-btn relative text-left text-lg font-light text-white transition-colors duration-200 cursor-pointer">
+            Weekly
+            <span class="underline-bar block h-0.5 bg-white mt-1 transition-all duration-300 w-full"></span>
+          </button>
+
+          <button
+          data-period="monthly"
+          class="period-btn relative text-left text-lg font-light text-[#7678b6] hover:text-white transition-colors duration-200 cursor-pointer">
+            Monthly
+            <span class="underline-bar block h-0.5 bg-white mt-1 transition-all duration-300 w-0"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-[80%] h-fit mx-auto relative md:top-5">
+      <div class="w-full h-[250px] rounded-3xl bg-[#ff8b64] absolute top-0 z-10 overflow-hidden"><img class="ml-auto pr-5 mt-[-15px] w-40 h-40" src="images/icon-work.svg" alt="img"></div>
+      <div class="w-full h-[200px] rounded-3xl bg-[#1d204b] absolute top-15 z-30 text-white md:h-[250px]">
+        <div class="flex m-10 ">
+          <p>Work</p>
+          <img class="ml-auto h-2 self-center" src="images/icon-ellipsis.svg" alt="ellipsis">
+        </div>
+        <div class="flex m-10 md:grid md:gap-5">
+          <p class="stat-current text-white text-4xl font-light transition-all duration-300" id="work-current">32hrs</p>
+          <p class="stat-prev text-[#7678b6] text-sm transition-all duration-300 ml-auto md:ml-0 self-center" id="work-prev">Last Week-36hrs</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-[80%] h-fit mx-auto relative md:top-5">
+      <div class="w-full h-[250px] rounded-3xl bg-[#56c2e6] absolute top-0 z-10 overflow-hidden"><img class="ml-auto pr-5 mt-[-15px] w-40 h-40" src="images/icon-play.svg" alt="img"></div>
+      <div class="w-full h-[200px] rounded-3xl bg-[#1d204b] absolute top-15 z-30 text-white md:h-[250px]">
+        <div class="flex m-10 ">
+          <p>Play</p>
+          <img class="ml-auto h-2 self-center" src="images/icon-ellipsis.svg" alt="ellipsis">
+        </div>
+        <div class="flex m-10 md:grid md:gap-5">
+          <p class="stat-current text-white text-4xl font-light transition-all duration-300" id="play-current">10hrs</p>
+          <p class="stat-prev text-[#7678b6] text-sm transition-all duration-300 ml-auto md:ml-0 self-center" id="play-prev">Last Week-8hrs</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-[80%] h-fit mx-auto relative md:top-5">
+      <div class="w-full h-[250px] rounded-3xl bg-[#ff5d7d] absolute top-0 z-10 overflow-hidden"><img class="ml-auto pr-5 mt-[-15px] w-40 h-40" src="images/icon-study.svg" alt="img"></div>
+      <div class="w-full h-[200px] rounded-3xl bg-[#1d204b] absolute top-15 z-30 text-white md:h-[250px]">
+        <div class="flex m-10 ">
+          <p>Study</p>
+          <img class="ml-auto h-2 self-center" src="images/icon-ellipsis.svg" alt="ellipsis">
+        </div>
+        <div class="flex m-10 md:grid md:gap-5">
+          <p class="stat-current text-white text-4xl font-light transition-all duration-300" id="study-current">4hrs</p>
+          <p class="stat-prev text-[#7678b6] text-sm transition-all duration-300 ml-auto md:ml-0 self-center" id="study-prev">Last Week-7hrs</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-[80%] h-fit mx-auto relative md:top-5">
+      <div class="w-full h-[250px] rounded-3xl bg-[#4bcf83] absolute top-0 z-10 overflow-hidden"><img class="ml-auto pr-5 mt-[-15px] w-40 h-40" src="images/icon-exercise.svg" alt="img"></div>
+      <div class="w-full h-[200px] rounded-3xl bg-[#1d204b] absolute top-15 z-30 text-white md:h-[250px]">
+        <div class="flex m-10 ">
+          <p>Exercise</p>
+          <img class="ml-auto h-2 self-center" src="images/icon-ellipsis.svg" alt="ellipsis">
+        </div>
+        <div class="flex m-10 md:grid md:gap-5">
+          <p class="stat-current text-white text-4xl font-light transition-all duration-300" id="exercise-current">4hrs</p>
+          <p class="stat-prev text-[#7678b6] text-sm transition-all duration-300 ml-auto md:ml-0 self-center" id="exercise-prev">Last Week-5hrs</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-[80%] h-fit mx-auto relative md:top-5">
+      <div class="w-full h-[250px] rounded-3xl bg-[#7235d1] absolute top-0 z-10 overflow-hidden"><img class="ml-auto pr-5 mt-[-15px] w-40 h-40" src="images/icon-social.svg" alt="img"></div>
+      <div class="w-full h-[200px] rounded-3xl bg-[#1d204b] absolute top-15 z-30 text-white md:h-[250px]">
+        <div class="flex m-10 ">
+          <p>Social</p>
+          <img class="ml-auto h-2 self-center" src="images/icon-ellipsis.svg" alt="ellipsis">
+        </div>
+        <div class="flex m-10 md:grid md:gap-5">
+          <p class="stat-current text-white text-4xl font-light transition-all duration-300" id="social-current">5hrs</p>
+          <p class="stat-prev text-[#7678b6] text-sm transition-all duration-300 ml-auto md:ml-0 self-center" id="social-prev">Last Week-10hrs</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-[80%] h-fit mx-auto relative md:top-5 mb-5">
+      <div class="w-full h-[250px] rounded-3xl bg-[#f1c75b] absolute top-0 z-10 overflow-hidden"><img class="ml-auto pr-5 mt-[-15px] w-40 h-40" src="images/icon-self-care.svg" alt="img"></div>
+      <div class="w-full h-[200px] rounded-3xl bg-[#1d204b] absolute top-15 z-30 text-white md:h-[250px]">
+        <div class="flex m-10 ">
+          <p>Self Care</p>
+          <img class="ml-auto h-2 self-center" src="images/icon-ellipsis.svg" alt="ellipsis">
+        </div>
+        <div class="flex m-10 md:grid md:gap-5">
+          <p class="stat-current text-white text-4xl font-light transition-all duration-300" id="selfcare-current">2hrs</p>
+          <p class="stat-prev text-[#7678b6] text-sm transition-all duration-300 ml-auto md:ml-0 self-center" id="selfcare-prev">Last Week-2hrs</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+<script src="main.js"></script>
+</body>
+</html>
